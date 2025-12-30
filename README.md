@@ -1,10 +1,12 @@
 # Setup MIDAS
 
 # install
-sudo apt-get install bluez bluez-hcidump tmux git cmake libcurl4-openssl-dev, libcap-dev
+```bash
+sudo apt-get install bluez bluez-hcidump tmux git cmake libcurl4-openssl-dev libcap-dev
 pip install picamzero --break-system-packages
+```
 
-`bashrc`
+`vim .bashrc`
 
 ```bash
 export MIDASSYS=$HOME/midas
