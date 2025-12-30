@@ -6,6 +6,17 @@ sudo apt-get install bluez bluez-hcidump tmux git cmake libcurl4-openssl-dev lib
 pip install picamzero --break-system-packages
 ```
 
+# midas
+```bash
+git clone https://@bitbucket.org/tmidas/midas.git
+cd midas
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake ..
+make -j4
+```
+
 `vim .bashrc`
 
 ```bash
