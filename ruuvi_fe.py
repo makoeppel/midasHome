@@ -38,7 +38,8 @@ class RuuviEquipment(midas.frontend.EquipmentBase):
                         "TempEG", "HumidityEG", "BatteryEG",
                         "TempOG", "HumidityOG", "BatteryOG",
                         "TempBad", "HumidityBad", "BatteryBad",
-                    ]
+                    ],
+                    "Enabled": [True, False, False]
         }
 
         # You MUST call midas.frontend.EquipmentBase.__init__ in your equipment's __init__ method!
@@ -71,7 +72,9 @@ class RuuviEquipment(midas.frontend.EquipmentBase):
 
             # create event
             event_data = []
-            for mac in self.settings["MAC"]:
+            for enabled, mac in zip(self.settings["Enabled"], self.settings["MAC"]):
+                if not enabled:
+                    continue
                 if mac not in data:
                     all_macs = False
                     break
